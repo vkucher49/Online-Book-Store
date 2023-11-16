@@ -19,7 +19,6 @@ public class Book {
     @Column(nullable = false)
     private String title;
     private String author;
-    @Column(unique = true, nullable = false)
     private String isbn;
     private BigDecimal price;
     private String coverImage;
