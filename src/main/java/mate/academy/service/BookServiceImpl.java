@@ -40,6 +40,9 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public BookDto update(Long id, CreateBookRequestDto createBookRequestDto) {
+        if (id == null) {
+            throw new RuntimeException("ID do not exist: " + id);
+        }
         Book bookFromDb = bookRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Can't find book by id " + id));
         bookFromDb.setAuthor(createBookRequestDto.getAuthor());
