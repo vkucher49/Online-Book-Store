@@ -28,5 +28,5 @@ public class User {
     @Column(name = "shipping_address")
     private String shippingAddress;
     @Column(name = "is_deleted")
-    private boolean isDeleted;
+    private boolean isDeleted = false;
 }
