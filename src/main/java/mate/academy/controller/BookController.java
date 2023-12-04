@@ -9,7 +9,6 @@ import mate.academy.dto.book.BookDto;
 import mate.academy.dto.book.BookSearchParameters;
 import mate.academy.dto.book.CreateBookRequestDto;
 import mate.academy.service.BookService;
-import org.springframework.context.support.BeanDefinitionDsl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
