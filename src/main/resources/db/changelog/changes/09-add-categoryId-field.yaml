@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - changeSet:
+      id: add-category-id-column
+      author: kucherv
+      changes:
+        - addColumn:
+            tableName: books
+            columns:
+              - column:
+                  name: category_id
+                  type: bigint
+                  constraints:
+                    nullable: false
