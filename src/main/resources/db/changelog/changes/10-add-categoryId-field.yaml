@@ -9,5 +9,6 @@ databaseChangeLog:
               - column:
                   name: category_id
                   type: bigint
+                  defaultValue: 0
                   constraints:
                     nullable: false

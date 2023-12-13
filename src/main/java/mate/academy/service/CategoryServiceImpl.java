@@ -22,8 +22,7 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public List<CategoryResponseDto> findAll(Pageable pageable) {
-        return categoryRepository.findAll(pageable)
-                .stream()
+        return categoryRepository.findAll(pageable).stream()
                 .map(categoryMapper::toDto)
                 .toList();
     }
@@ -31,27 +30,27 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public CategoryResponseDto getById(Long id) {
         Category categoryFromDb = categoryRepository.findById(id).orElseThrow(
-                () -> new EntityNotFoundException("Can't find category by ID: " + id)
+                () -> new EntityNotFoundException("Can't find category by id = " + id)
         );
         return categoryMapper.toDto(categoryFromDb);
     }
 
     @Override
-    public CategoryResponseDto save(CategoryRequestDto requestDto) {
-        Category category = categoryMapper.toEntity(requestDto);
+    public CategoryResponseDto save(CategoryRequestDto categoryDto) {
+        Category category = categoryMapper.toEntity(categoryDto);
         Category saveCategory = categoryRepository.save(category);
         return categoryMapper.toDto(saveCategory);
     }
 
     @Override
-    public CategoryResponseDto update(Long id, CategoryRequestDto requestDto) {
+    public CategoryResponseDto update(Long id, CategoryRequestDto categoryDto) {
         Category categoryFromDb = categoryRepository.findById(id).orElseThrow(
-                () -> new EntityNotFoundException("Can't find category by ID: " + id)
+                () -> new EntityNotFoundException("Can't find category by id " + id)
         );
-        categoryFromDb.setName(requestDto.getName());
-        categoryFromDb.setDescription(requestDto.getDescription());
-        Category category = categoryRepository.save(categoryFromDb);
-        return categoryMapper.toDto(category);
+        categoryFromDb.setName(categoryDto.getName());
+        categoryFromDb.setDescription(categoryDto.getDescription());
+        Category saveCategory = categoryRepository.save(categoryFromDb);
+        return categoryMapper.toDto(saveCategory);
     }
 
     @Override
@@ -61,8 +60,7 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public List<BookDtoWithoutCategoryIds> getBooksByCategoriesId(Long id) {
-        return categoryRepository.getBooksByCategoriesId(id)
-                .stream()
+        return categoryRepository.getBooksByCategoriesId(id).stream()
                 .map(bookMapper::toDtoWithoutCategories)
                 .toList();
     }
