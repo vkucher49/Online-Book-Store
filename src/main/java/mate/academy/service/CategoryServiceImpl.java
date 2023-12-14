@@ -38,8 +38,8 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public CategoryResponseDto save(CategoryRequestDto categoryDto) {
         Category category = categoryMapper.toEntity(categoryDto);
-        Category saveCategory = categoryRepository.save(category);
-        return categoryMapper.toDto(saveCategory);
+        Category savedCategory = categoryRepository.save(category);
+        return categoryMapper.toDto(savedCategory);
     }
 
     @Override
@@ -49,8 +49,8 @@ public class CategoryServiceImpl implements CategoryService {
         );
         categoryFromDb.setName(categoryDto.getName());
         categoryFromDb.setDescription(categoryDto.getDescription());
-        Category saveCategory = categoryRepository.save(categoryFromDb);
-        return categoryMapper.toDto(saveCategory);
+        Category savedCategory = categoryRepository.save(categoryFromDb);
+        return categoryMapper.toDto(savedCategory);
     }
 
     @Override

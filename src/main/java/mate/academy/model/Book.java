@@ -47,7 +47,7 @@ public class Book {
     private Set<Category> categories = new HashSet<>();
     @ManyToOne
     @JoinColumn(name = "category_id", nullable = false)
-    private Category category;
+    private Category categoryId;
     @Column(nullable = false, name = "is_deleted")
     private boolean isDeleted = false;
 }
