@@ -5,11 +5,11 @@ import mate.academy.dto.book.BookDto;
 import mate.academy.dto.book.CreateBookRequestDto;
 import mate.academy.dto.category.BookDtoWithoutCategoryIds;
 import mate.academy.model.Book;
+import mate.academy.model.Category;
+import org.mapstruct.AfterMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-import org.mapstruct.AfterMapping;
 import org.mapstruct.MappingTarget;
-import mate.academy.model.Category;
 
 @Mapper(config = MapperConfig.class)
 public interface BookMapper {
