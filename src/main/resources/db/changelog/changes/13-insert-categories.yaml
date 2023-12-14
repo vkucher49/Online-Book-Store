@@ -1,0 +1,15 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert-categories
+      author: kucherv
+      changes:
+        - insert:
+            tableName: categories
+            columns:
+              - column: { name: name, value: "Prose" }
+              - column: { name: description, value: "prose" }
+        - insert:
+            tableName: categories
+            columns:
+              - column: { name: name, value: "Lyrics" }
+              - column: { name: description, value: "lyrics" }

@@ -1,0 +1,23 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert-books
+      author: kucherv
+      changes:
+        - insert:
+            tableName: books
+            columns:
+              - column: { name: title, value: "Kobzar" }
+              - column: { name: author, value: "Shevchenko" }
+              - column: { name: isbn, value: "aaa111" }
+              - column: { name: price, value: "59.99" }
+              - column: { name: description, value: "AAA" }
+              - column: { name: cover_image, value: "aaa" }
+        - insert:
+            tableName: books
+            columns:
+              - column: { name: title, value: "Mavka" }
+              - column: { name: author, value: "Ukrainka" }
+              - column: { name: isbn, value: "bbb111" }
+              - column: { name: price, value: "79.99" }
+              - column: { name: description, value: "BBB" }
+              - column: { name: cover_image, value: "bbb" }
