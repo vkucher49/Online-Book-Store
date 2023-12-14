@@ -7,6 +7,9 @@ import mate.academy.dto.category.BookDtoWithoutCategoryIds;
 import mate.academy.model.Book;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.AfterMapping;
+import org.mapstruct.MappingTarget;
+import mate.academy.model.Category;
 
 @Mapper(config = MapperConfig.class)
 public interface BookMapper {
@@ -19,4 +22,11 @@ public interface BookMapper {
     Book toModel(CreateBookRequestDto bookRequestDto);
 
     BookDtoWithoutCategoryIds toDtoWithoutCategories(Book book);
+
+    @AfterMapping
+    default void setCategoryIds(@MappingTarget BookDto bookDto, Book book) {
+        bookDto.setCategoryIds(book.getCategories().stream()
+                .map(Category::getId)
+                .toList());
+    }
 }
