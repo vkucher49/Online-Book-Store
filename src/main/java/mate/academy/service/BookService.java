@@ -4,6 +4,7 @@ import java.util.List;
 import mate.academy.dto.book.BookDto;
 import mate.academy.dto.book.BookSearchParameters;
 import mate.academy.dto.book.CreateBookRequestDto;
+import mate.academy.dto.category.BookDtoWithoutCategoryIds;
 import org.springframework.data.domain.Pageable;
 
 public interface BookService {
@@ -18,4 +19,6 @@ public interface BookService {
     void deleteById(Long id);
 
     List<BookDto> search(BookSearchParameters searchParameters);
+
+    List<BookDtoWithoutCategoryIds> findAllByCategoryId(Long categoryId);
 }

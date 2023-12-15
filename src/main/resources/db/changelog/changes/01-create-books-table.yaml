@@ -1,6 +1,6 @@
 databaseChangeLog:
   - changeSet:
-      id: createTable-books
+      id: create-books-table
       author: kucherv
       changes:
         - createTable:
@@ -8,33 +8,40 @@ databaseChangeLog:
             columns:
               - column:
                   name: id
-                  type: BIGINT
+                  type: bigint
                   autoIncrement: true
                   constraints:
                     primaryKey: true
                     nullable: false
               - column:
                   name: title
-                  type: VARCHAR(255)
+                  type: varchar(255)
                   constraints:
                     nullable: false
               - column:
                   name: author
-                  type: VARCHAR(255)
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
               - column:
                   name: isbn
-                  type: VARCHAR(255)
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
               - column:
                   name: price
-                  type: DECIMAL(10, 2)
-              - column:
-                  name: cover_image
-                  type: VARCHAR(255)
+                  type: decimal(38,2)
+                  constraints:
+                    nullable: false
               - column:
                   name: description
-                  type: VARCHAR(1000)
+                  type: varchar(255)
+              - column:
+                  name: cover_image
+                  type: varchar(255)
               - column:
                   name: is_deleted
-                  type: BOOLEAN
+                  type: boolean
+                  defaultValueBoolean: false
                   constraints:
                     nullable: false
