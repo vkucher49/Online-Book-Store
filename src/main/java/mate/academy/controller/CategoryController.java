@@ -62,7 +62,7 @@ public class CategoryController {
         categoryService.deleteById(id);
     }
 
-    @GetMapping("/books/{id}")
+    @GetMapping("/categories/{id}/books")
     @Operation(summary = "Get books by category id", description = "Get books from db by category")
     public List<BookDtoWithoutCategoryIds> getBooksByCategoryId(@PathVariable Long id) {
         return categoryService.getBooksByCategoriesId(id);
