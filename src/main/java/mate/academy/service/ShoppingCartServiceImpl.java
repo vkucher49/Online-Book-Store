@@ -2,8 +2,8 @@ package mate.academy.service;
 
 import lombok.RequiredArgsConstructor;
 import mate.academy.dto.book.BookQuantityDto;
-import mate.academy.dto.cartItems.CartItemRequestDto;
-import mate.academy.dto.shoppingCart.ShoppingCartResponseDto;
+import mate.academy.dto.cartitems.CartItemRequestDto;
+import mate.academy.dto.shoppingcart.ShoppingCartResponseDto;
 import mate.academy.exception.EntityNotFoundException;
 import mate.academy.mapper.CartItemMapper;
 import mate.academy.mapper.ShoppingCartMapper;
@@ -12,8 +12,8 @@ import mate.academy.model.CartItem;
 import mate.academy.model.ShoppingCart;
 import mate.academy.model.User;
 import mate.academy.repository.book.BookRepository;
-import mate.academy.repository.cartItem.CartItemRepository;
-import mate.academy.repository.shoppingCart.ShoppingCartRepository;
+import mate.academy.repository.cartitem.CartItemRepository;
+import mate.academy.repository.shoppingcart.ShoppingCartRepository;
 import org.springframework.stereotype.Service;
 
 @Service

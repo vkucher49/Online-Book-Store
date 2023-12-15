@@ -1,9 +1,9 @@
 package mate.academy.mapper;
 
 import mate.academy.config.MapperConfig;
-import mate.academy.dto.cartItems.CartItemResponseDto;
-import mate.academy.dto.shoppingCart.ShoppingCartRequestDto;
-import mate.academy.dto.shoppingCart.ShoppingCartResponseDto;
+import mate.academy.dto.cartitems.CartItemResponseDto;
+import mate.academy.dto.shoppingcart.ShoppingCartRequestDto;
+import mate.academy.dto.shoppingcart.ShoppingCartResponseDto;
 import mate.academy.model.CartItem;
 import mate.academy.model.ShoppingCart;
 import org.mapstruct.AfterMapping;

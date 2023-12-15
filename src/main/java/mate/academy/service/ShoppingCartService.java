@@ -1,8 +1,8 @@
 package mate.academy.service;
 
 import mate.academy.dto.book.BookQuantityDto;
-import mate.academy.dto.cartItems.CartItemRequestDto;
-import mate.academy.dto.shoppingCart.ShoppingCartResponseDto;
+import mate.academy.dto.cartitems.CartItemRequestDto;
+import mate.academy.dto.shoppingcart.ShoppingCartResponseDto;
 
 public interface ShoppingCartService {
     ShoppingCartResponseDto getShoppingCartDto();
