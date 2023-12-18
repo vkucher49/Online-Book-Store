@@ -99,7 +99,6 @@
             <artifactId>liquibase-maven-plugin</artifactId>
             <version>${liquibase.version}</version>
         </dependency>
-
     </dependencies>
 
     <build>
