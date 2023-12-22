@@ -1,0 +1,1 @@
+DELETE FROM books WHERE title = 'A Book' AND title = 'B Book' AND title = 'C Book';
