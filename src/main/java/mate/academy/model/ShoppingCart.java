@@ -13,6 +13,8 @@ import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import java.util.Set;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
 
@@ -28,8 +30,12 @@ public class ShoppingCart {
     @OneToOne
     @JoinColumn(name = "user_id")
     @MapsId
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     private User user;
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "shoppingCart")
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     private Set<CartItem> cartItems;
     @Column(name = "is_deleted", nullable = false)
     private boolean isDeleted = false;
